@@ -1,0 +1,23 @@
+package clicker.equipment
+
+class GoldMines extends Equipment{
+
+  this.name = "Gold Mine"
+
+  override def goldPerSecond(): Double = {
+    100.0 * numberOwned
+  }
+
+  override def goldPerClick(): Double = {
+    0.0
+  }
+
+  override def costOfNextPurchase(): Double = {
+    if (numberOwned == 0){
+      1000.0
+    }else{
+      1000.0 * (1 + numberOwned * 0.1)
+    }
+  }
+
+}
